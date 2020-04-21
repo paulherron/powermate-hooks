@@ -1,3 +1,4 @@
+**/*.o
 led
 powermate-hooks
 hooks/press-on.sh
