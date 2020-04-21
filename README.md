@@ -10,7 +10,7 @@ Install
 -------
 
 ```
-git clone git@github.com/paulherron/powermate-hooks.git
+git clone https://github.com/paulherron/powermate-hooks.git
 cd powermate-hooks
 make
 ```
