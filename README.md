@@ -1,7 +1,9 @@
 PowerMate hooks
 ===============
 
-Adapted from Will Sowerbutts' [Griffin Powermate driver for Linux](https://sowerbutts.com/powermate/).
+Adapted from Will Sowerbutts' [Griffin PowerMate driver for Linux](https://sowerbutts.com/powermate/).
+
+Provides a script to run the Griffin PowerMate on Linux, and run scripts in response to button presses and rotation.
 
 
 Install
@@ -35,6 +37,14 @@ hooks/rotate.sh # Called as the dial is rotated, and the percentage rotation pas
 
 See inside the `hooks/` directory for some example scripts that create an internet radio when the PowerMate is plugged into a Raspberry Pi. Pressing the button toggles the radio on and off, and turning the dial controls the system volume with `amixer`.
 
+An example Supervisor script is included. It would keep the `powermate-hooks` script running (e.g. after a reboot) and can be used as follows:
+
+```
+ln -s /home/pi/powermate-hooks/supervisor/powermate-hooks.conf /etc/supervisor/conf.d/
+sudo supervisorctl update
+sudo service supervisor restart
+```
+
 
 Limitations
 -----------
@@ -44,6 +54,7 @@ The `powermate-hooks` script was intended to make the PowerMate an interface for
 * The script always starts in an 'off' state
 * The concept of the PowerMate toggling on and off is hardcoded
 * Rotation is always passed in percentages
+* Only simple rotation and button presses are supported. Other actions like "click and rotate" are not.
 
 
 Troubleshooting
