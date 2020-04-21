@@ -1,3 +1,5 @@
+led
+powermate-hooks
 hooks/press-on.sh
 hooks/press-off.sh
 hooks/rotate.sh
